@@ -2,10 +2,81 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Kopi Keliling</title>
+  <title>Surat Pagi Buat Kamu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', cursive;
+      background: linear-gradient(to bottom right, #ffe0f0, #fff4cc);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 200, 200, 0.4);
+      max-width: 400px;
+      animation: zoomIn 1s ease;
+    }
+    h1 {
+      font-size: 24px;
+      color: #ff4081;
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      width: 80%;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .love {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #999;
+      font-style: italic;
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Selamat datang di website Kopi Keliling</h1>
-  <p>Website ini menampilkan info tentang keunggulan usaha kopi gerobakan.</p>
+  <div class="container">
+    <h1>🌸 Surat Rahasia Spesial Pagi Ini 🌸</h1>
+    <p>Masukkan namamu dulu ya, biar suratnya tahu harus jatuh ke hati siapa 😊</p>
+    <input type="text" id="nameInput" placeholder="Namamu..." />
+    <button onclick="goToNext()">Lanjut Baca Surat ➤</button>
+    <p class="love">Buka dengan senyum, ya. Karena surat ini penuh semangat dan cinta!</p>
+  </div>
+
+  <script>
+    function goToNext() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (name === "") {
+        alert("Namanya dulu dong, masa langsung buka surat 🙃");
+        return;
+      }
+      window.location.href = "surat.html?name=" + encodeURIComponent(name);
+    }
+  </script>
 </body>
 </html>
